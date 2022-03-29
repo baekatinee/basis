@@ -16,7 +16,7 @@ function sendJSON(answer) {
   // создаём новый экземпляр запроса XHR
   let xhr = new XMLHttpRequest();
   // адрес, куда мы отправим нашу JSON-строку
-  let url = "basis.clothing/submit-data/";
+  let url = "basis.clothing/submit-quiz";
   // открываем соединение
   xhr.open("POST", url, true);
   // устанавливаем заголовок — выбираем тип контента, который отправится на сервер, в нашем случае мы явно пишем, что это JSON
