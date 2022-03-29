@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basis</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="menu">
+                <div class="logo">
+                    <a href="index.html">
+                        BASIS
+                    </a>
+                </div>
+                <div class="menu-list">
+                    <ul>
+                        <a href="faq.html">
+                            <li>FAQ</li>
+                        </a>
+                        <a href="contact.html">
+                            <li>Контакты</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        
+  <div class="result_modal"> </div>
+    <section class="main_quiz">
+        <div class="container">
+            <div class="quiz-info">
+                <div class="quiz-title">
+                    Заполните нашу анкету
+                </div>
+                <div class="quiz-title two">
+                    для получения образа
+                </div>
+                <div class="quiz-subtitle">
+                    Заполнение займет 7 минут.
+                </div>
+            </div>
+
+            <!-- <div class="quiz-inner">
+                <div class="quiz-inner-item name">
+                    <div class="quiz-inner-item-info">
+                        <div class="quiz-inner-item-info-number">
+                            1
+                        </div>
+                        <div class="quiz-inner-item-info-question">
+                            Как вас зовут?
+                        </div>
+                    </div>
+                    <div class="quiz-inner-item-answer one">
+                        <input type="text" id="name" placeholder="Ваше имя">
+                    </div>
+                </div> -->
+                <!-- <div class="quiz-inner-item">
+                    <div class="quiz-inner-item-info">
+                        <div class="quiz-inner-item-info-number">
+                            2
+                        </div>
+                        <div class="quiz-inner-item-info-question">
+                            Ваша цель пополения гардероба?
+                        </div>
+                    </div>
+                    <div class="quiz-inner-item-answer two">
+                        <div class="quiz-inner-item-answer-purpose two">
+                            <form name="type">
+
+                        
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio-1" type="radio" name="radio" value="1" checked>
+                                <label for="radio-1">Повседневная одежда</label>
+                            </div>
+
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio-2" type="radio" name="radio" value="2">
+                                <label for="radio-2">Одежда для спорта</label>
+                            </div>
+
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio-3" type="radio" name="radio" value="3">
+                                <label for="radio-3">Одежда для отпуска</label>
+                            </div>
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio-4" type="radio" name="radio" value="3">
+                                <label for="radio-4">Одежда для офиса</label>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="quiz-inner-item">
+                    <div class="quiz-inner-item-info">
+                        <div class="quiz-inner-item-info-number">
+                            3
+                        </div>
+                        <div class="quiz-inner-item-info-question">
+                            Укажите ваши параметры
+                        </div>
+                    </div>
+                    <div class="quiz-inner-item-answer three">
+                        <input type="number" name="Chest" placeholder="Объем груди">
+                        <input type="number" name="Wrest" placeholder="Объем талии">
+                        <input type="number" name="Hips" placeholder="Объем бедер">
+                    </div>
+                </div>
+                <div class="quiz-inner-item">
+                    <div class="quiz-inner-item-info">
+                        <div class="quiz-inner-item-info-number">
+                            4
+                        </div>
+                        <div class="quiz-inner-item-info-question">
+                            Укажите ваш возраст
+                        </div>
+                    </div>
+                    <div class="quiz-inner-item-answer four">
+                        <input type="date" id="calendar">
+                    </div>
+                </div>
+                <div class="quiz-inner-item">
+                    <div class="quiz-inner-item-info">
+                        <div class="quiz-inner-item-info-number">
+                            5
+                        </div>
+                        <div class="quiz-inner-item-info-question">
+                            Какой у вас цвет волос?
+                        </div>
+                    </div>
+                    <div class="quiz-inner-item-answer five">
+                        <div class="quiz-inner-item-answer-purpose five">
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio2-1" type="radio" name="radio2" value="1" checked>
+                                <label class="hair1" for="radio2-1"></label>
+                                <div class="hair-color">
+                                    Брюнет
+                                </div>
+                            </div>
+
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio2-2" type="radio" name="radio2" value="2">
+                                <label class="hair2" for="radio2-2"></label>
+                                <div class="hair-color">
+                                    Рыжий
+                                </div>
+                            </div>
+
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio2-3" type="radio" name="radio2" value="3">
+                                <label class="hair3" for="radio2-3"></label>
+                                <div class="hair-color">
+                                    Блондин
+                                </div>
+                            </div>
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio2-4" type="radio" name="radio2" value="4">
+                                <label class="hair4" for="radio2-4"></label>
+                                <div class="hair-color">
+                                    Шатен
+                                </div>
+                            </div>
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio2-5" type="radio" name="radio2" value="5">
+                                <label class="hair5" for="radio2-5"></label>
+                                <div class="hair-color">
+                                    Русый
+                                </div>
+                            </div>
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio2-6" type="radio" name="radio2" value="6">
+                                <label class="hair6" for="radio2-6"></label>
+                                <div class="hair-color">
+                                    Седой
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-inner-item">
+                    <div class="quiz-inner-item-info">
+                        <div class="quiz-inner-item-info-number">
+                            6
+                        </div>
+                        <div class="quiz-inner-item-info-question">
+                            Выберете цветовую гамму, которая ближе всего вам
+                        </div>
+                    </div>
+                    <div class="quiz-inner-item-answer-purpose six">
+                        <div class="quiz-inner-item-answer-purpose-item">
+                            <input id="radio3-1" type="radio" name="radio3" value="1" checked>
+                            <div class="color-pattern">
+                                <label class="color-pattern-type" style="background: #F1F1F1;" for="radio3-1"></label>
+                                <label class="color-pattern-type" style="background:  #414141;" for="radio3-1"></label>
+                                <label class="color-pattern-type" style="background:  #CFCDCD;" for="radio3-1"></label>
+                                <label class="color-pattern-type" style="background: #292929;" for="radio3-1"></label>
+                            </div>
+                            <div class="hair-color">
+                                Серый монохром
+                            </div>
+                        </div>
+                        <div class="quiz-inner-item-answer-purpose-item">
+                            <input id="radio3-2" type="radio" name="radio3" value="2" >
+                            <div class="color-pattern">
+                                <label class="color-pattern-type" style="background: #BC9887;" for="radio3-2"></label>
+                                <label class="color-pattern-type" style="background:  #5B3022;" for="radio3-2"></label>
+                                <label class="color-pattern-type" style="background:   #FDF2E4;" for="radio3-2"></label>
+                                <label class="color-pattern-type" style="background: #786058;" for="radio3-2"></label>
+                            </div>
+                            <div class="hair-color">
+                                Бежевый монохром
+                            </div>
+                        </div>
+                        <div class="quiz-inner-item-answer-purpose-item">
+                            <input id="radio3-3" type="radio" name="radio3" value="3" >
+                            <div class="color-pattern">
+                                <label class="color-pattern-type" style="
+                                background: #E0EBF6;" for="radio3-3"></label>
+                                <label class="color-pattern-type" style="background:   #FDF2D0;" for="radio3-3"></label>
+                                <label class="color-pattern-type" style="background:    #EED4EC;" for="radio3-3"></label>
+                                <label class="color-pattern-type" style="background: #E5EFDB;" for="radio3-3"></label>
+                            </div>
+                            <div class="hair-color">
+                                Пастельная
+                            </div>
+                        </div>
+                        <div class="quiz-inner-item-answer-purpose-item">
+                            <input id="radio3-4" type="radio" name="radio3" value="4">
+                            <div class="color-pattern">
+                                <label class="color-pattern-type" style="
+                                background:  #5A7F6C;" for="radio3-4"></label>
+                                <label class="color-pattern-type" style="background:    #9C6F73;" for="radio3-4"></label>
+                                <label class="color-pattern-type" style="background:    #5C1311;" for="radio3-4"></label>
+                                <label class="color-pattern-type" style="background:  #000E54;" for="radio3-4"></label>
+                            </div>
+                            <div class="hair-color">
+                                Приглушенная
+                            </div>
+                        </div>
+                        <div class="quiz-inner-item-answer-purpose-item">
+                            <input id="radio3-4" type="radio" name="radio3" value="5" >
+                            <div class="color-pattern">
+                                <label class="color-pattern-type" style="
+                                background:  #FF7F29;" for="radio3-4"></label>
+                                <label class="color-pattern-type" style="background:    #00D23B;" for="radio3-4"></label>
+                                <label class="color-pattern-type" style="background:     #0066FF;" for="radio3-4"></label>
+                                <label class="color-pattern-type" style="background:   #B300F2;" for="radio3-4"></label>
+                            </div>
+                            <div class="hair-color">
+                                Яркая
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-inner-item">
+                    <div class="quiz-inner-item-info">
+                        <div class="quiz-inner-item-info-number">
+                            7
+                        </div>
+                        <div class="quiz-inner-item-info-question">
+                            Какие модели джинс/брюк предпочитате?
+                        </div>
+                    </div>
+                    <div class="quiz-inner-item-answer five">
+                        <div class="quiz-inner-item-answer-purpose five">
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio4-1" type="radio" name="radio4" value="1" checked>
+                                <label class="hair1" for="radio4-1">
+
+                                </label>
+                            
+                                <div class="hair-color">
+                                    Свободные
+                                </div>
+                            </div>
+
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio4-2" type="radio" name="radio4" value="2">
+                                <label class="hair2" for="radio4-2"></label>
+                                <div class="hair-color">
+                                    Прямые
+                                </div>
+                            </div>
+
+                            <div class="quiz-inner-item-answer-purpose-item">
+                                <input id="radio4-3" type="radio" name="radio4" value="3">
+                                <label class="hair3" for="radio4-3"></label>
+                                <div class="hair-color">
+                                    Скинни
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            <!-- </div> -->
+            <div class="quiz__container" id="quiz">
+                <div class="quiz__header">
+                    <div class="inner-title">
+                        <div id="idQuestion">
+                            Id Question
+                        </div>
+                      <h2 id="question">Question text</h2>
+                    </div>
+
+                  <ul>
+                    <li>
+                      <input class="answer" name="answer" id="a" type="radio" />
+                      <label id="a_text" for="a">Question</label>
+                    </li>
+                    <li>
+                      <input class="answer" name="answer" id="b" type="radio" />
+                      <label id="b_text" for="b">Question</label>
+                    </li>
+                    <li>
+                      <input class="answer" name="answer" id="c" type="radio" />
+                      <label id="c_text" for="c">Question</label>
+                    </li>
+                    <li>
+                      <input class="answer" name="answer" id="d" type="radio" />
+                      <label id="d_text" for="d">Question</label>
+                    </li>
+                  </ul>
+                </div>
+                <button id="submit">Заполнить анкету</button>
+          </div>
+            <!-- <div class="btn-wrapper">
+                <div class="btn">
+                    <a href="#">
+                        <div class="btn-inner" onclick="startQuiz('Следующий вопрос'); return false;">
+                            <div class="btn-inner-text">
+                                Заполнить анкету
+                            </div>
+                           <div class="btn-inner-img"><img src="img/arrow-btn.png" alt=""></div>
+                        </div>
+                    </a>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-inner-logo">
+                    BASIS
+                </div>
+                <div class="footer-inner-menu">
+                    <ul>
+                        <a href="contact.html">
+                            <li>Контакты</li>
+                        </a>
+                        <a href="faq.html">
+                            <li>FAQ</li>
+                        </a>
+                    </ul>
+                    <ul>
+                        <a href="">
+                            <li>Политика обработки данных</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="footer-inner-roots">
+                    © 2022 Все права защищены
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
