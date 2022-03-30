@@ -6,35 +6,65 @@ $(function () {
   );
 
 });
+
+
+
+$(document).ready(function () {
+  $("button").click(function () {
+      $.get("https://basis.clothing/submit-quiz",
+          $('form').serialize(),
+          function (data, status) {
+              $("#outerwearTable tr").remove();
+              $("#shirtsTable tr").remove();
+              $("#pantsTable tr").remove();
+              $.each(data.outerwear, function (i, item) {
+                  $("#outerwearTable tbody").append(
+                      "<tr>"
+                      + "<td> <a href=" + item.page + ">ссылка</a> </td>"
+                      + "<td> <img src=" + item.image + " height=200 </td>"
+                      + "</tr>"
+                  )
+              })
+              $.each(data.shirts, function (i, item) {
+                  $("#shirtsTable tbody").append(
+                      "<tr>"
+                      + "<td> <a href=" + item.page + ">ссылка</a> </td>"
+                      + "<td> <img src=" + item.image + " height=200 </td>"
+                      + "</tr>"
+                  )
+              })
+              $.each(data.pants, function (i, item) {
+                  $("#pantsTable tbody").append(
+                      "<tr>"
+                      + "<td> <a href=" + item.page + ">ссылка</a> </td>"
+                      + "<td> <img src=" + item.image + " height=200 </td>"
+                      + "</tr>"
+                  )
+              })
+          });
+  });
+});
 // эта функция сработает при нажатии на кнопку
 function sendJSON(answer) {
-  // с помощью jQuery обращаемся к элементам на странице по их именам
-  let answer1 = answer;
-  // let birth = document.querySelector('#calendar');
-  // // а вот сюда мы поместим ответ от сервера
-  // let result = document.querySelector('.result');
-  // создаём новый экземпляр запроса XHR
-  let xhr = new XMLHttpRequest();
-  // адрес, куда мы отправим нашу JSON-строку
-  let url = "basis.clothing/submit-quiz";
-  // открываем соединение
-  xhr.open("POST", url, true);
-  // устанавливаем заголовок — выбираем тип контента, который отправится на сервер, в нашем случае мы явно пишем, что это JSON
-  xhr.setRequestHeader("Content-Type", "application/json");
-  // когда придёт ответ на наше обращение к серверу, мы его обработаем здесь
-  xhr.onreadystatechange = function () {
-    // если запрос принят и сервер ответил, что всё в порядке
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      // выводим то, что ответил нам сервер — так мы убедимся, что данные он получил правильно
-      result.innerHTML = this.responseText;
-    }
-  };
-  // преобразуем наши данные JSON в строку
-  var data = JSON.stringify({ "question1": answer1[0], "question2": answer1[1], "question3": answer1[2], "question4": answer1[3], "question5": answer1[4] });
-  window.alert(JSON.stringify({"question1": answer1[0], "question2": answer1[1], "question3": answer1[2], "question4": answer1[3], "question5": answer1[4] }));
-  console.log(data);
-  // когда всё готово, отправляем JSON на сервер
-  xhr.send(data);
+  let response = null;
+  $.post("https://basis.clothing/submit-data", 
+  {"question1": answer[0], "question2": answer[1], "question3": answer[2], "question4": answer[3], "question5": answer[4] },
+  function(data) {
+    response = data;
+    console.log(data);
+}).done(function() {
+   // TO DO ON DONE
+}).fail(function(data, textStatus, xhr) {
+     //This shows status code eg. 403
+     console.log("error", data.status);
+     //This shows status message eg. Forbidden
+     console.log("STATUS: "+xhr);
+}).always(function() {
+     //TO-DO after fail/done request.
+     console.log("ended");
+})
+  
+
 }
 
 const quizData = [{
