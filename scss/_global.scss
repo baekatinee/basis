@@ -27,9 +27,11 @@ a{
    text-decoration: none;
    color: #000;
    cursor: pointer;
+   transition: all 0.5s ease;
    &:hover{
       color: #ccc;
-      transition-duration: 0.4s;
+      background: #000;
+      transition: all 0.5s ease;
    }
 }
 .container{
