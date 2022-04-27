@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
    <title>Опросник</title>
 </head>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <body>
      <header>
       <div class="container">
@@ -61,30 +62,15 @@
                         </div>
                         <h2 id="question">Question text</h2>
                     </div>
+                    <form action="">
 
-                    <ul>
-                        <li class="radioBtn">
-                            <input class="answer" name="answer" id="a" type="radio" />
-                            <label id="a_text" for="a">Question</label>
-                        </li>
-                        <li class="radioBtn">
-                            <input class="answer" name="answer" id="b" type="radio" />
-                            <label id="b_text" for="b">Question</label>
-                        </li>
-                        <li class="radioBtn">
-                            <input class="answer" name="answer" id="c" type="radio" />
-                            <label id="c_text" for="c">Question</label>
-                        </li>
-                        <li class="radioBtn">
-                            <input class="answer" name="answer" id="d" type="radio" />
-                            <label id="d_text" for="d">Question</label>
-                        </li>
-                        <li class="age">
-                            <input class="answer" name="answer" id="a" type="number" />
-                        </li>
-                    </ul>
+                    </form>
                 </div>
-                <button id="submit">Заполнить анкету</button>
+                <div class="btnContainer">
+                    <button id="submitBack">Назад</button>
+                    <button id="submit">Заполнить анкету</button>
+                </div>
+              
             </div>
         </div>
     </section>
@@ -126,6 +112,7 @@
   </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/app.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>
