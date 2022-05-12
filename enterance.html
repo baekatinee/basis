@@ -6,9 +6,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/style.min.css">
    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-   <title>Опросник</title>
+   <title>Вход</title>
 </head>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
 <body>
      <header>
       <div class="container">
@@ -47,33 +48,18 @@
         <div class="container">
             <div class="quiz-info">
                 <div class="quiz-title">
-                    Заполните нашу анкету
+                    Войдите в личный кабинет
                 </div>
-                <div class="quiz-title two">
-                    для получения образа
-                </div>
-                <div class="quiz-subtitle">
-                    Заполнение займет 2 минуты.
-                </div>
-            </div>
-            <div class="quiz__container" id="quiz">
-                <div class="quiz__header">
-                    <div class="inner-title">
-                        <div id="idQuestion">
-                            Id Question
-                        </div>
-                        <h2 id="question">Question text</h2>
-                    </div>
-                    <form class="form" action="">
 
-                    </form>
+                <div class="quiz-subtitle">
+                    Сохраняем Ваши результаты подборок.
                 </div>
-                <div class="btnContainer">
-                    <button id="submitBack">Назад</button>
-                    <button id="submit">Заполнить анкету</button>
-                </div>
-              
             </div>
+            <form class="account" action="">
+                <input type="text" name="Username" class="username" placeholder="Имя пользователя">
+                <input type="text" name="Password" class="password" placeholder="Пароль">
+            </form>
+            <button id="accountBtn">Заполнить анкету</button>
         </div>
     </section>
     <section class="result">
@@ -82,7 +68,7 @@
             </div>
         </div>
     </section>
-    
+
       <footer>
     <div class="container">
       <div class="footer-inner">
@@ -115,6 +101,42 @@
   </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/app.min.js"></script>
+    <script>
+        function sendDataEnterance() {
+            const login = document.querySelector('.username').value;
+            const pass = document.querySelector('.password').value;
+
+            let json = JSON.stringify({ "Username": login, "Password": pass });
+            console.log(json);
+            let response = null;
+            $.post("https://api.basis.clothing/sign-up",
+                json,
+                function (data) {
+                    response = data;
+                    console.log(data);
+                }).done(function () {
+                    // TO DO ON DONE
+                    quizTitle.innerText = `Ого, ваша персональная`;
+                    quizTitleTwo.innerText = `подборка готова`;
+                    quizSubtitle.innerText = `Ниже подборка с ссылками на вещи и подборка образов от эксперта`;
+                    const liMenu = document.querySelector('.enterance');
+                    liMenu.innerText=`${login}`;
+                }).fail(function (data, textStatus, xhr) {
+                    //This shows status code eg. 403
+                    console.log("error", data.status);
+                    //This shows status message eg. Forbidden
+                    console.log("STATUS: " + xhr);
+                }).always(function () {
+                    //TO-DO after fail/done request.
+                    console.log("ended");
+                })
+        }
+        const submitEnterance = document.getElementById('accountBtn');
+        submitEnterance.addEventListener('click', () => {
+            console.log("ddd");
+            sendDataEnterance();
+        });
+    </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
