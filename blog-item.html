@@ -1,79 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/style.min.css">
-   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-   <title>Главная</title>
-</head>
+@@include('html/head.html',{ "title": "Что такое капсульный гардероб?" })
 
 <body>
-     <header>
-      <div class="container">
-        <div class="menu">
-          <div class="logo">
-            <a href="index.html">
-              BASIS
-            </a>
-          </div>
-          <div class="burger-menu">
-            <div class="burger-menu-line"></div>
-            <div class="burger-menu-line"></div>
-            <div class="burger-menu-line"></div>
-          </div>
-          <div class="menu-list">
-            <ul>
-              <a href="faq.html">
-                <li>FAQ</li>
-              </a>
-              <a href="contacts.html">
-                <li>Контакты</li>
-              </a>
-              <a href="blog.html">
-                <li>Блог</li>
-              </a>
-              <a href="enterance.html" class="enterance">
-                <li>Войти</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
+    @@include('html/header.html',{})
+    <section class="blog-item">
+        <div class="container">
+            <div class="blog-item-title">
+                Что такое капсульный гардероб и
+            </div>
+            <div class="blog-item-title">
+                как его создать?
+            </div>
+            <div class="blog-item-inner">
+                «Зол отая лихорадка» 2000-х годов постепенно сходит на нет. Финансовая стабильность, безумное
+                разнообразие одежды и появление новых брендов на рынке создали эффект-наоборот. Теперь спрос не рождает
+                предложение. А скорее предложения появляются вне зависимости от потребностей покупателя. Множество людей
+                стали придерживаться минимализма во всех сферах своей жизни, в том числе и в одежде. Сейчас поколение Z
+                вкладывает лишние деньги в образование, путешествия и эмоции, а не в одежду. Капсульный гардероб —
+                отличное средство, чтоб придерживаться такой философии. Почему? Давайте разберемся.
 
+            </div>
+            <div class="blog-item-title">
+                Что такое капсула одежды?
+            </div>
 
-      <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-inner-logo">
-          BASIS
-        </div>
-        <div class="footer-inner-menu">
-          <ul>
-            <a href="contacts.html">
-              <li>Контакты</li>
-            </a>
-            <a href="faq.html">
-              <li>FAQ</li>
-            </a>
-            <a href="blog.html">
-              <li>Блог</li>
-            </a>
-          </ul>
-          <ul>
-            <a href="">
-              <li>Политика обработки данных</li>
-            </a>
-          </ul>
-        </div>
-        <div class="footer-inner-roots">
-          © 2022 Все права защищены
-        </div>
-      </div>
-    </div>
-  </footer>
+            <div class="blog-item-inner">
+                «Зол отая лихорадка» 2000-х годов постепенно сходит на нет. Финансовая стабильность, безумное
+                разнообразие одежды и появление новых брендов на рынке создали эффект-наоборот. Теперь спрос не рождает
+                предложение. А скорее предложения появляются вне зависимости от потребностей покупателя. Множество людей
+                стали придерживаться минимализма во всех сферах своей жизни, в том числе и в одежде. Сейчас поколение Z
+                вкладывает лишние деньги в образование, путешествия и эмоции, а не в одежду. Капсульный гардероб —
+                отличное средство, чтоб придерживаться такой философии. Почему? Давайте разберемся.
+            </div>
+            <div class="blog-item-img">
+                <img src="img/blog-img2.png" alt="">
+            </div>       
+            <div class="blog-item-title">
+                Откуда родилась идея
+            </div>
+            <div class="blog-item-title">
+                капсульного гардероба?
+            </div>
+            <div class="blog-item-inner">
+                Владелица магазина «Wardrobe» в Лондоне Сюзи Фо считается первой, кто употребил данный термин в моде.
+                Она считала, что гардероб девушки должен состоять из нескольких основных предметов одежды, которые
+                останутся в тренде как минимум на пару лет, отлично будут сидеть на вас, а материал не потеряет своего
+                первозданного вида. А впоследствии такой гардероб можно дополнять модными вещами сезона.
+            </div>
+    </section>
+
+    @@include('html/footer.html',{})
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/app.min.js"></script>
 </body>

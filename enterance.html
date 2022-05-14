@@ -1,57 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/style.min.css">
-   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-   <title>Вход</title>
-</head>
+@@include('html/head.html',{ "title": "Вход" })
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
 <body>
-     <header>
-      <div class="container">
-        <div class="menu">
-          <div class="logo">
-            <a href="index.html">
-              BASIS
-            </a>
-          </div>
-          <div class="burger-menu">
-            <div class="burger-menu-line"></div>
-            <div class="burger-menu-line"></div>
-            <div class="burger-menu-line"></div>
-          </div>
-          <div class="menu-list">
-            <ul>
-              <a href="faq.html">
-                <li>FAQ</li>
-              </a>
-              <a href="contacts.html">
-                <li>Контакты</li>
-              </a>
-              <a href="blog.html">
-                <li>Блог</li>
-              </a>
-              <a href="enterance.html" class="enterance">
-                <li>Войти</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="result_modal"> </div>
-    <section class="main_quiz">
+    @@include('html/header.html',{})
+    <section class="account-container">
         <div class="container">
-            <div class="quiz-info">
-                <div class="quiz-title">
-                    Войдите в личный кабинет
+            <div class="title-inner">
+                <div class="title-inner-item-big">
+                    Спасибо за возвращение!
                 </div>
-
-                <div class="quiz-subtitle">
+                <div class="title-inner-item-big two">
+                    Войдите в кабинет
+                </div>
+                <div class="title-inner-item-small">
                     Сохраняем Ваши результаты подборок.
                 </div>
             </div>
@@ -59,7 +22,12 @@
                 <input type="text" name="Username" class="username" placeholder="Имя пользователя">
                 <input type="text" name="Password" class="password" placeholder="Пароль">
             </form>
-            <button id="accountBtn">Заполнить анкету</button>
+            <button id="accountBtn">Войти</button>
+            <div class="registration">
+                <a href="registration.html">
+                    Нет аккаунта? Зарегистрируйтесь!
+                </a>
+            </div>
         </div>
     </section>
     <section class="result">
@@ -69,73 +37,51 @@
         </div>
     </section>
 
-      <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-inner-logo">
-          BASIS
-        </div>
-        <div class="footer-inner-menu">
-          <ul>
-            <a href="contacts.html">
-              <li>Контакты</li>
-            </a>
-            <a href="faq.html">
-              <li>FAQ</li>
-            </a>
-            <a href="blog.html">
-              <li>Блог</li>
-            </a>
-          </ul>
-          <ul>
-            <a href="">
-              <li>Политика обработки данных</li>
-            </a>
-          </ul>
-        </div>
-        <div class="footer-inner-roots">
-          © 2022 Все права защищены
-        </div>
-      </div>
-    </div>
-  </footer>
+    @@include('html/footer.html',{})
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/app.min.js"></script>
     <script>
-        function sendDataEnterance() {
-            const login = document.querySelector('.username').value;
-            const pass = document.querySelector('.password').value;
+    function sendDataEnterance() {
+  const loginE = document.querySelector('.username').value;
+  const passE = document.querySelector('.password').value;
+  let json = JSON.stringify({ "Username": loginE, "Password": passE });
+  console.log(json);
+  let response = null;
+  $.post("https://api.basis.clothing/sign-in",
+    json,
+    function (data) {
+      response = data;
+      console.log(data);
+    }).done(function () {
+      // TO DO ON DONE
+      const liMenu = document.querySelector('.enterance');
+      liMenu.innerText = `${loginE}`;
+    }).fail(function (data, textStatus, xhr) {
+      //This shows status code eg. 403
+      console.log("error", data.status);
+      if(data.status===403){
+        alert("Извините, Ваши имя пользователя и пароль недействительны!");
+      }
+      if(data.status===401){
+        alert("Извините, такой пользователь не зарегистрирован!");
+        
+      }
+      if(data.status===400){
+        alert("Вы не ввели данные!");
 
-            let json = JSON.stringify({ "Username": login, "Password": pass });
-            console.log(json);
-            let response = null;
-            $.post("https://api.basis.clothing/sign-up",
-                json,
-                function (data) {
-                    response = data;
-                    console.log(data);
-                }).done(function () {
-                    // TO DO ON DONE
-                    quizTitle.innerText = `Ого, ваша персональная`;
-                    quizTitleTwo.innerText = `подборка готова`;
-                    quizSubtitle.innerText = `Ниже подборка с ссылками на вещи и подборка образов от эксперта`;
-                    const liMenu = document.querySelector('.enterance');
-                    liMenu.innerText=`${login}`;
-                }).fail(function (data, textStatus, xhr) {
-                    //This shows status code eg. 403
-                    console.log("error", data.status);
-                    //This shows status message eg. Forbidden
-                    console.log("STATUS: " + xhr);
-                }).always(function () {
-                    //TO-DO after fail/done request.
-                    console.log("ended");
-                })
-        }
-        const submitEnterance = document.getElementById('accountBtn');
-        submitEnterance.addEventListener('click', () => {
-            console.log("ddd");
-            sendDataEnterance();
-        });
+      }
+      //This shows status message eg. Forbidden
+      console.log("STATUS: " + xhr);
+    }).always(function () {
+      //TO-DO after fail/done request.
+      console.log("ended");
+    })
+}
+const submitEnterance = document.getElementById('accountBtn');
+submitEnterance.addEventListener('click', () => {
+  console.log("Entrance");
+  sendDataEnterance();
+});
     </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
