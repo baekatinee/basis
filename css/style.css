@@ -917,12 +917,12 @@ footer .footer-inner-menu ul a:hover {
 .blog-main-info .blog-wrapper .blog-item-img {
   height: 200px;
   width: 100%;
-  background: url(../img/blog-img1.png);
+  background: url(../img/blog-img2.png);
   background-size: cover;
   margin-bottom: 20px;
 }
 .blog-main-info .blog-wrapper .blog-item-img.two {
-  background: url(../img/blog-img2.png);
+  background: url(../img/blog-img1.png);
 }
 .blog-main-info .blog-wrapper .blog-item-info {
   max-width: 360px;
@@ -1002,12 +1002,124 @@ footer .footer-inner-menu ul a:hover {
   margin-bottom: 20px;
 }
 
-.account {
+.account-container .account {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 330px;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+.account-container .account input {
+  border: none;
+  border-bottom: 1px solid #121212;
+  font-size: 20px;
+  line-height: 24px;
+  color: #9e9e9e;
+  margin-bottom: 40px;
+  font-family: "GilroyLight", sans-serif;
+}
+.account-container .registration {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: right;
+  text-decoration-line: underline;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 200px;
+}
+.account-container .registration a:hover {
+  background: none;
+  color: #352b29;
+}
+.account-container .title-inner {
+  padding: 50px 0 0 200px;
+}
+.account-container .title-inner-item-big {
+  font-family: "GilroyBold", sans-serif;
+  font-size: 55px;
+}
+.account-container .title-inner-item-small {
+  font-size: 20px;
+  line-height: 24px;
+  padding-top: 20px;
+  margin-bottom: 100px;
+}
+
+button {
+  display: flex;
+  background: none;
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  font-size: 26px;
+  line-height: 32px;
+  padding: 10px 50px;
+}
+button:hover {
+  color: #ccc;
+  background: #000;
+  transition: all 0.5s ease;
+}
+
+.registration-wrapper .account {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+.registration-wrapper .account input {
+  border: none;
+  border-bottom: 1px solid #121212;
+  font-size: 20px;
+  line-height: 24px;
+  color: #9e9e9e;
+  margin-bottom: 40px;
+  font-family: "GilroyLight", sans-serif;
+}
+.registration-wrapper .registration-inner {
+  padding: 50px 0 0 200px;
+}
+.registration-wrapper .registration-inner-title {
+  font-family: "GilroyBold", sans-serif;
+  font-size: 55px;
+}
+.registration-wrapper .registration-inner-subtitle {
+  font-size: 20px;
+  line-height: 24px;
+  padding-top: 20px;
+  margin-bottom: 100px;
+}
+
+.blog-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.blog-item .blog-item-img {
+  max-width: 800px;
+  margin: 60px 0;
+}
+.blog-item .blog-item-img img {
+  width: 100%;
+}
+.blog-item .blog-item-title {
+  font-family: "GilroyBold", sans-serif;
+  font-size: 55px;
+  font-size: 48px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.blog-item .blog-item-inner {
+  text-align: justify;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 50px 0;
+  max-width: 800px;
 }
 
 @media (max-width: 1120px) {
