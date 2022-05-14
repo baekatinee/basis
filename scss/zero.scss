@@ -1,0 +1,44 @@
+/*Обнуление*/
+body{
+   font-size: 14px;
+   font-family: 'GilroyRegular';
+   color: #000;
+}
+img{
+   display: block;
+}
+ul,
+li{
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+p{
+   margin: 0;
+}
+.container{
+   margin: 0 auto;
+   max-width: 1280px;
+   padding: 0 15px;
+}
+a{
+   text-decoration: none;
+   color: #000;
+   cursor: pointer;
+   transition: all 0.5s ease;
+   &:hover{
+      color: #ccc;
+      background: #000;
+      transition: all 0.5s ease;
+   }
+}
+
+button{
+   transition: all 0.5s ease;
+   &:hover{
+      background: #121212;
+      color: #fff;
+      transition: all 0.5s ease;
+   }
+}
+
