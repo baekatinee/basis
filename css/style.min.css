@@ -295,6 +295,72 @@ header .menu .menu-list ul a + a {
   margin-bottom: 20px;
 }
 
+.history-inner {
+  display: none;
+  padding: 100px 40px 100px 320px;
+}
+.history-inner .title {
+  margin-bottom: 20px;
+  font-family: "GilroyBold", sans-serif;
+  font-size: 55px;
+}
+.history-inner .subtitle {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+.history-inner .subtitle.two {
+  margin-top: -30px;
+}
+
+.result-inner {
+  display: flex;
+  margin: 0 auto;
+  max-width: 700px;
+  flex-wrap: wrap;
+}
+.result-inner-title {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-top: -50px;
+  font-family: "GilroySemiBold", sans-serif;
+}
+.result-inner-item {
+  width: 50%;
+  margin-bottom: 100px;
+}
+.result-inner-item-img {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+.result-inner-item-img img {
+  width: 100%;
+}
+.result-inner-item .brand {
+  font-size: 18px;
+  font-family: "GilroySemiBold", sans-serif;
+}
+.result-inner-item .price {
+  font-size: 18px;
+}
+.result-inner-item-link {
+  padding-top: 20px;
+  font-size: 22px;
+  line-height: 32px;
+  justify-content: space-between;
+  display: flex;
+  max-width: 300px;
+  align-items: center;
+}
+.result-inner-item-link img {
+  width: 50px;
+}
+.result-inner-item-link:hover {
+  background: unset;
+}
+
 .main-result {
   margin-bottom: 200px;
 }
@@ -315,17 +381,17 @@ header .menu .menu-list ul a + a {
   text-align: center;
   margin-bottom: 60px;
 }
-.main-result .result-inner {
+.main-result .index-result-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
 }
-.main-result .result-inner-sign {
+.main-result .index-result-inner-sign {
   font-size: 40px;
   font-family: "GilroyBold", sans-serif;
 }
-.main-result .result-inner-look {
+.main-result .index-result-inner-look {
   width: 262px;
   height: 262px;
   border-radius: 50%;
@@ -1131,6 +1197,11 @@ button:hover {
   }
 }
 @media (max-width: 1010px) {
+  .history-inner {
+    padding-left: 0;
+    text-align: center;
+  }
+
   .main-screen .main-info .main-img img {
     width: 100%;
   }
@@ -1140,7 +1211,8 @@ button:hover {
   }
 }
 @media (max-width: 900px) {
-  .contact-title, .contact-subtitle {
+  .contact-title,
+.contact-subtitle {
     padding-left: 0;
     text-align: center;
   }
@@ -1216,9 +1288,13 @@ button:hover {
     padding: unset;
   }
 
-  .main-result .result-inner {
+  .main-result .index-result-inner {
     justify-content: center;
     flex-wrap: wrap;
+  }
+  .main-result .index-result-inner-look {
+    margin: 0 auto;
+    margin-top: 40px;
   }
 
   .ups {
@@ -1236,6 +1312,11 @@ button:hover {
   }
 }
 @media (max-width: 700px) {
+  .history-inner .title {
+    font-size: 35px;
+    line-height: 35px;
+  }
+
   .main-contact-inner-item {
     width: 100%;
     margin-bottom: 40px;
@@ -1257,7 +1338,7 @@ button:hover {
   .main-result .result-title {
     font-size: 30px;
   }
-  .main-result .result-inner-look {
+  .main-result .index-result-inner-look {
     font-size: 25px;
   }
 
@@ -1310,6 +1391,28 @@ button:hover {
   }
 }
 @media (max-width: 657px) {
+  .result-inner {
+    justify-content: center;
+  }
+  .result-inner-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .result-inner-item-img {
+    width: 200px;
+  }
+  .result-inner-item-img img {
+    width: 100%;
+  }
+  .result-inner-item-link {
+    width: 200px;
+  }
+  .result-inner-item-link .link-text {
+    font-size: 20px;
+  }
+
   .result-inner {
     justify-content: space-around;
   }
@@ -1369,11 +1472,27 @@ button:hover {
     max-width: 250px;
   }
 
-  .main-result .result-inner {
+  .main-result .index-result-inner {
     justify-content: space-between;
   }
 }
 @media (max-width: 490px) {
+  .result-inner .result-inner-item {
+    width: 100%;
+  }
+  .result-inner .result-inner-item .result-inner-item-img {
+    width: 100%;
+  }
+  .result-inner .result-inner-item .result-inner-item-img img {
+    width: 100%;
+  }
+  .result-inner .result-inner-item .result-inner-item-link {
+    width: 100%;
+  }
+  .result-inner .result-inner-item .result-inner-item-link .link-text {
+    font-size: 20px;
+  }
+
   .result .result-inner .result-inner-item {
     width: 100%;
   }
