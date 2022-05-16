@@ -522,6 +522,9 @@ footer .footer-inner-menu ul a:hover {
   padding: 20px 0;
   align-items: center;
 }
+.main-contact .contact-inner-item-info-title {
+  margin-right: 10px;
+}
 .main-contact .contact-inner-item-info .contact-inner-item-arrow {
   transition-duration: 0.4s;
 }
