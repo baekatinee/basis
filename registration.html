@@ -35,8 +35,8 @@
               <a href="blog.html">
                 <li>Блог</li>
               </a>
-              <a href="enterance.html">
-                <li  class="enterance">Войти</li>
+              <a href="history.html">
+                <li  class="enterance">Подборки</li>
               </a>
             </ul>
           </div>
@@ -96,47 +96,6 @@
   </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/app.min.js"></script>
-    <script>
-        function sendDataRegistration() {
-  const loginR = document.querySelector('.usernameRegistration').value;
-  const passR = document.querySelector('.passwordRegistration').value;
-  let json = JSON.stringify({ "Username": loginR, "Password": passR });
-  console.log(json);
-  let response = null;
-  $.post("https://api.basis.clothing/sign-up",
-    json,
-    function (data) {
-      response = data;
-      console.log(data);
-    }).done(function () {
-      // TO DO ON DONE
-      const liMenu = document.querySelector('.enterance');
-      liMenu.innerText = `${loginR}`;
-    }).fail(function (data, textStatus, xhr) {
-      //This shows status code eg. 403
-      if(data.status===409||data.status===500){
-        alert("Извините, имя пользователя или пароль заняты!");
-    
-      }
-      if(data.status===400){
-        alert("Вы не ввели данные!");
-    
-      }
-      console.log("error", data.status);
-      //This shows status message eg. Forbidden
-      console.log("STATUS: " + xhr);
-    }).always(function () {
-      //TO-DO after fail/done request.
-      console.log("ended");
-    })
-}
-
-const submitRegistration = document.getElementById('registrationBtn');
-submitRegistration.addEventListener('click', () => {
-  console.log("Registraion");
-  sendDataRegistration();
-});
-    </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 

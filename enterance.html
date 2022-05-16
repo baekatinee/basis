@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
 <body>
-     <header>
+   <header>
       <div class="container">
         <div class="menu">
           <div class="logo">
@@ -35,47 +35,42 @@
               <a href="blog.html">
                 <li>Блог</li>
               </a>
-              <a href="enterance.html">
-                <li  class="enterance">Войти</li>
+              <a href="history.html">
+                <li  class="enterance">Подборки</li>
               </a>
             </ul>
           </div>
         </div>
       </div>
     </header>
-    <section class="account-container">
-        <div class="container">
-            <div class="title-inner">
-                <div class="title-inner-item-big">
-                    Спасибо за возвращение!
-                </div>
-                <div class="title-inner-item-big two">
-                    Войдите в кабинет
-                </div>
-                <div class="title-inner-item-small">
-                    Сохраняем Ваши результаты подборок.
-                </div>
-            </div>
-            <form class="account" action="">
-                <input type="text" name="Username" class="username" placeholder="Имя пользователя">
-                <input type="text" name="Password" class="password" placeholder="Пароль">
-            </form>
-            <button id="accountBtn">Войти</button>
-            <div class="registration">
-                <a href="registration.html">
-                    Нет аккаунта? Зарегистрируйтесь!
-                </a>
-            </div>
+  <section class="account-container">
+    <div class="container">
+      <div class="title-inner">
+        <div class="title-inner-item-big">
+          Спасибо за возвращение!
         </div>
-    </section>
-    <section class="result">
-        <div class="container">
-            <div class="result-inner">
-            </div>
+        <div class="title-inner-item-big two">
+          Войдите в кабинет
         </div>
-    </section>
+        <div class="title-inner-item-small">
+          Сохраняем Ваши результаты подборок.
+        </div>
+      </div>
+      <form class="account" action="">
+        <input type="text" name="Username" class="username" placeholder="Имя пользователя">
+        <input type="text" name="Password" class="password" placeholder="Пароль">
+      </form>
+      <button id="accountBtn">Войти</button>
+      <div class="registration">
+        <a href="registration.html">
+          Нет аккаунта? Зарегистрируйтесь!
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <footer>
+
+    <footer>
     <div class="container">
       <div class="footer-inner">
         <div class="footer-inner-logo">
@@ -105,52 +100,9 @@
       </div>
     </div>
   </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/app.min.js"></script>
-    <script>
-    function sendDataEnterance() {
-  const loginE = document.querySelector('.username').value;
-  const passE = document.querySelector('.password').value;
-  let json = JSON.stringify({ "Username": loginE, "Password": passE });
-  console.log(json);
-  let response = null;
-  $.post("https://api.basis.clothing/sign-in",
-    json,
-    function (data) {
-      response = data;
-      console.log(data);
-    }).done(function () {
-      // TO DO ON DONE
-      const liMenu = document.querySelector('.enterance');
-      liMenu.innerText = `${loginE}`;
-    }).fail(function (data, textStatus, xhr) {
-      //This shows status code eg. 403
-      console.log("error", data.status);
-      if(data.status===403){
-        alert("Извините, Ваши имя пользователя и пароль недействительны!");
-      }
-      if(data.status===401){
-        alert("Извините, такой пользователь не зарегистрирован!");
-        
-      }
-      if(data.status===400){
-        alert("Вы не ввели данные!");
-
-      }
-      //This shows status message eg. Forbidden
-      console.log("STATUS: " + xhr);
-    }).always(function () {
-      //TO-DO after fail/done request.
-      console.log("ended");
-    })
-}
-const submitEnterance = document.getElementById('accountBtn');
-submitEnterance.addEventListener('click', () => {
-  console.log("Entrance");
-  sendDataEnterance();
-});
-    </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/app.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>
