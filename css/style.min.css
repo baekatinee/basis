@@ -321,13 +321,13 @@ header .menu .menu-list ul a + a {
   margin-right: 10px;
 }
 
-.result-inner {
+.result-inner-outfit {
   display: flex;
   margin: 0 auto;
   max-width: 700px;
   flex-wrap: wrap;
 }
-.result-inner-title {
+.result-inner-outfit .result-inner-title {
   width: 100%;
   text-align: center;
   font-size: 30px;
@@ -335,25 +335,25 @@ header .menu .menu-list ul a + a {
   margin-top: -50px;
   font-family: "GilroySemiBold", sans-serif;
 }
-.result-inner-item {
+.result-inner-outfit .result-inner-item {
   width: 50%;
   margin-bottom: 100px;
 }
-.result-inner-item-img {
+.result-inner-outfit .result-inner-item .result-inner-item-img {
   max-width: 300px;
   margin-bottom: 20px;
 }
-.result-inner-item-img img {
+.result-inner-outfit .result-inner-item .result-inner-item-img img {
   width: 100%;
 }
-.result-inner-item .brand {
+.result-inner-outfit .result-inner-item .brand {
   font-size: 18px;
   font-family: "GilroySemiBold", sans-serif;
 }
-.result-inner-item .price {
+.result-inner-outfit .result-inner-item .price {
   font-size: 18px;
 }
-.result-inner-item-link {
+.result-inner-outfit .result-inner-item .result-inner-item-link {
   padding-top: 20px;
   font-size: 22px;
   line-height: 32px;
@@ -362,10 +362,10 @@ header .menu .menu-list ul a + a {
   max-width: 300px;
   align-items: center;
 }
-.result-inner-item-link img {
+.result-inner-outfit .result-inner-item .result-inner-item-link img {
   width: 50px;
 }
-.result-inner-item-link:hover {
+.result-inner-outfit .result-inner-item .result-inner-item-link:hover {
   background: unset;
 }
 
